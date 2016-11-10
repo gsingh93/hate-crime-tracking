@@ -76,7 +76,6 @@ label, input, select {
   padding: 30px;
 }
 
-
 /*
  * Header
  */
@@ -177,4 +176,10 @@ label, input, select {
   .cover-container {
     width: 700px;
   }
+}
+
+#map {
+  height: 23em;
+  width:23em;
+  margin: auto;
 }

@@ -21,10 +21,10 @@
     var map = map_generation(markerCenter)
 
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
-      
+
       var place = autocomplete.getPlace();
       var latitude = place.geometry.location.lat();
-      var longitude = place.geometry.location.lng(); 
+      var longitude = place.geometry.location.lng();
       var markerCenter = new google.maps.LatLng(latitude,longitude);
       var marker = null;
 

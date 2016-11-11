@@ -30,7 +30,7 @@ google.maps.event.addDomListener(window, 'load', function () {
 
     var map = map_generation(markerCenter);
 
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
       position: markerCenter
     });
     marker.setMap(map);

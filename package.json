@@ -12,6 +12,7 @@
     "bootstrap": "^3.3.7"
   },
   "devDependencies": {
+    "grunt": "^1.0.1",
     "jade": "^1.11.0"
   }
 }

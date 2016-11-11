@@ -3,55 +3,60 @@ doctype html
 html
   head
     title Hate Crime Tracking
-    link(rel="stylesheet", type="text/css", href="./node_modules/bootstrap/dist/css/bootstrap.min.css")
-    link(rel="stylesheet", type="text/css", href="./cover.css")
+
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+
+    link(rel="stylesheet", type="text/css", href="node_modules/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", type="text/css", href="style.css")
 
   body
-    div(class="site-wrapper")
-      div(class="site-wrapper-inner")
-        div(class="cover-container")
+    div(class="container")
+      div(class="container-content")
 
-          div(class="masthead clearfix")
-            div(class="inner")
-              h3(class="masthead-brand") Hate Crime Tracking
-              nav
-                ul(class="masthead-nav")
-                  li(class="active")
-                    a(href="#") Feed
-                  li
-                    a(href="#") Stats
-                  li
-                    a(href="#") Contact
+        //- Navigation
+        div(class="masthead clearfix")
+          div(class="inner")
+            h3(class="masthead-brand") Hate Crime Tracking
+            nav
+              ul(class="masthead-nav")
+                li(class="active")
+                  a(href="#") Feed
+                li
+                  a(href="#") Stats
+                li
+                  a(href="#") Contact
 
-          div(class="input-form")
-            form(method="post", action="/")
-              div
-                label URL:
-                  input(type="url", name="url")
+        //- Submission form
+        form(class="form-horizontal", method="post", action="/")
+          div(class="form-group")
+            label(class="control-label col-sm-2") URL:
+            div(class="col-sm-10")
+              input(class="form-control", type="url", name="url")
 
-              div
-                label Date:
-                  input(type="date")
-                label Location:
-                  input#autocomplete(type="text")
+          div(class="form-group")
+            label(class="control-label col-sm-2") Date:
+            div.col-sm-4
+              input(class="form-control", type="date")
+            
+            label(class="control-label col-sm-2") Location:
+            div.col-sm-4
+              input#autocomplete(class="form-control", type="text")
 
-              div
-                label Religion:
-                  select(name="religion")
-                    option(value="sikh") Sikh
-                label Gender:
-                  select(name="gender")
-                    option(value="male") Male
-                    option(value="female") Female
-                    option(value="other") Other
+          div(class="form-group")
+            label(class="control-label col-sm-2") Religion:
+            div.col-sm-4
+              select(class="form-control", name="religion")
+                option(value="sikh") Sikh
+
+            label(class="control-label col-sm-2") Gender:
+            div.col-sm-4
+              select(class="form-control", name="gender")
+                option(value="male") Male
+                option(value="female") Female
+                option(value="other") Other
+
         div#map
+
     script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places")
     script(src="location.js")
-
-
-
-
-
-
-
-
+    

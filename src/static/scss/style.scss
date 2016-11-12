@@ -4,6 +4,9 @@ $nav-border-bottom-color: #656565;
 $white: #fff;
 $black: #000;
 
+html {
+    height: 100%;
+}
 body {
     background-color: $background-color;
     color: $white;
@@ -14,12 +17,9 @@ input, select {
     color: $black;
 }
 
-.container-content {
-    margin-right: auto;
-    margin-left: auto;
-}
-
 nav {
+    margin-top: 20px;
+
     li {
         display: inline-block;
         + li {
@@ -57,4 +57,10 @@ nav {
   height: 23em;
   width: 23em;
   margin: auto;
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
 }

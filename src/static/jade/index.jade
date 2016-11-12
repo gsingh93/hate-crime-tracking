@@ -11,95 +11,93 @@ html
 
   body
     div.container
-      div.container-content
+      //- Navigation
+      div.row
+        div.col-sm-6
+          h3 Hate Crime Tracking
+        div.col-sm-6
+          nav
+            ul
+              li.active
+                a(href="#") Feed
+              li
+                a(href="#") Stats
+              li
+                a(href="#") Contact
 
-        //- Navigation
-        div.row
+      div.error {{error}}
+
+      //- Submission form
+      form.form-horizontal(method="post", action="/")
+        div.form-group
+          label.control-label.col-sm-offset-2.col-sm-2 URL:
           div.col-sm-6
-            h3 Hate Crime Tracking
-          div.col-sm-6
-            nav
-              ul
-                li.active
-                  a(href="#") Feed
-                li
-                  a(href="#") Stats
-                li
-                  a(href="#") Contact
+            input.form-control(type="url", name="url")
 
-        div.error {{error}}
+        div.form-group
+          label.control-label.col-sm-2 Date:
+          div.col-sm-4
+            input.form-control(name="date", type="date")
 
-        //- Submission form
-        form.form-horizontal(method="post", action="/")
-          div.form-group
-            label.control-label.col-sm-2 URL:
-            div.col-sm-10
-              input.form-control(type="url", name="url")
+          label.control-label.col-sm-2 Location:
+          div.col-sm-4
+            input#autocomplete.form-control(name="location", type="text")
 
-          div.form-group
-            label.control-label.col-sm-2 Date:
-            div.col-sm-4
-              input.form-control(name="date", type="date")
+          label.control-label.col-sm-2 Name:
+          div.col-sm-4
+            input.form-control(name="name", type="text")
 
-            label.control-label.col-sm-2 Location:
-            div.col-sm-4
-              input#autocomplete.form-control(name="location", type="text")
+          label.control-label.col-sm-2 Religion:
+          div.col-sm-4
+            select.form-control(name="religion")
+              option(value="sikh") Sikh
 
-            label.control-label.col-sm-2 Name:
-            div.col-sm-4
-              input.form-control(name="name", type="text")
+          label.control-label.col-sm-2 Gender:
+          div.col-sm-4
+            select.form-control(name="gender")
+              option(value="male") Male
+              option(value="female") Female
+              option(value="other") Other
 
-            label.control-label.col-sm-2 Religion:
-            div.col-sm-4
-              select.form-control(name="religion")
-                option(value="sikh") Sikh
+          label.control-label.col-sm-2 Race:
+          div.col-sm-4
+            select.form-control(name="race")
+              option(value="male") Male
+              option(value="female") Female
+              option(value="other") Other
 
-            label.control-label.col-sm-2 Gender:
-            div.col-sm-4
-              select.form-control(name="gender")
-                option(value="male") Male
-                option(value="female") Female
-                option(value="other") Other
+          label.control-label.col-sm-2 Ethnicity:
+          div.col-sm-4
+            select.form-control(name="ethnicity")
+              option(value="male") Male
+              option(value="female") Female
+              option(value="other") Other
 
-            label.control-label.col-sm-2 Race:
-            div.col-sm-4
-              select.form-control(name="race")
-                option(value="male") Male
-                option(value="female") Female
-                option(value="other") Other
+          label.control-label.col-sm-2 Sexual Orientation:
+          div.col-sm-4
+            select.form-control(name="sexual_orientation")
+              option(value="male") Male
+              option(value="female") Female
+              option(value="other") Other
 
-            label.control-label.col-sm-2 Ethnicity:
-            div.col-sm-4
-              select.form-control(name="ethnicity")
-                option(value="male") Male
-                option(value="female") Female
-                option(value="other") Other
+          label.control-label.col-sm-2 Disability:
+          div.col-sm-4
+            select.form-control(name="disability")
+              option(value="male") Male
+              option(value="female") Female
+              option(value="other") Other
 
-            label.control-label.col-sm-2 Sexual Orientation:
-            div.col-sm-4
-              select.form-control(name="sexual_orientation")
-                option(value="male") Male
-                option(value="female") Female
-                option(value="other") Other
+          label.control-label.col-sm-2 Gender Identity:
+          div.col-sm-4
+            select.form-control(name="gender_identity")
+              option(value="male") Male
+              option(value="female") Female
+              option(value="other") Other
 
-            label.control-label.col-sm-2 Disability:
-            div.col-sm-4
-              select.form-control(name="disability")
-                option(value="male") Male
-                option(value="female") Female
-                option(value="other") Other
+        input(type="submit")
+      div#map
 
-            label.control-label.col-sm-2 Gender Identity:
-            div.col-sm-4
-              select.form-control(name="gender_identity")
-                option(value="male") Male
-                option(value="female") Female
-                option(value="other") Other
-
-          input(type="submit")
-        div#map
-        
-        div#feed
+      div#feed
 
     script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")

@@ -27,6 +27,8 @@ html
                 li
                   a(href="#") Contact
 
+        div.error {{error}}
+
         //- Submission form
         form.form-horizontal(method="post", action="/")
           div.form-group
@@ -37,13 +39,16 @@ html
           div.form-group
             label.control-label.col-sm-2 Date:
             div.col-sm-4
-              input.form-control(type="date")
-            
+              input.form-control(name="date", type="date")
+
             label.control-label.col-sm-2 Location:
             div.col-sm-4
-              input#autocomplete.form-control(type="text")
+              input#autocomplete.form-control(name="location", type="text")
 
-          div.form-group
+            label.control-label.col-sm-2 Name:
+            div.col-sm-4
+              input.form-control(name="name", type="text")
+
             label.control-label.col-sm-2 Religion:
             div.col-sm-4
               select.form-control(name="religion")
@@ -56,8 +61,43 @@ html
                 option(value="female") Female
                 option(value="other") Other
 
+            label.control-label.col-sm-2 Race:
+            div.col-sm-4
+              select.form-control(name="race")
+                option(value="male") Male
+                option(value="female") Female
+                option(value="other") Other
+
+            label.control-label.col-sm-2 Ethnicity:
+            div.col-sm-4
+              select.form-control(name="ethnicity")
+                option(value="male") Male
+                option(value="female") Female
+                option(value="other") Other
+
+            label.control-label.col-sm-2 Sexual Orientation:
+            div.col-sm-4
+              select.form-control(name="sexual_orientation")
+                option(value="male") Male
+                option(value="female") Female
+                option(value="other") Other
+
+            label.control-label.col-sm-2 Disability:
+            div.col-sm-4
+              select.form-control(name="disability")
+                option(value="male") Male
+                option(value="female") Female
+                option(value="other") Other
+
+            label.control-label.col-sm-2 Gender Identity:
+            div.col-sm-4
+              select.form-control(name="gender_identity")
+                option(value="male") Male
+                option(value="female") Female
+                option(value="other") Other
+
+          input(type="submit")
         div#map
 
     script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places")
     script(src="static/location.js")
-    

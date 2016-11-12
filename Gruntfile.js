@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pug: {
       compile: {
         files: {
-          'dist/templates/index.html': ['src/static/jade/index.jade']
+          'dist/app/templates/index.html': ['src/static/jade/index.jade']
         }
       }
     },
@@ -13,9 +13,9 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'src',
-            src: ['app.py'],
+            src: ['app/**', 'run.py'],
             dest: 'dist'
-          },
+          }
         ]
       },
       boostrap: {
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'node_modules/bootstrap/dist/css',
             src: ['boostrap.min.css'],
-            dest: 'dist/static'
+            dest: 'dist/app/static'
           }
         ]
       }
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'src/static/script',
           src: '*.js',
-          dest: 'dist/static'
+          dest: 'dist/app/static'
         }]
       }
     },
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'src/static/scss',
           src: ['*.scss'],
-          dest: 'dist/static',
+          dest: 'dist/app/static',
           ext: '.css'
         }]
       }
@@ -69,5 +69,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('compile',  ['pug']);
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('default', ['jshint', 'uglify', 'pug', 'sass', 'copy']);
+  grunt.registerTask('default', ['jshint', 'copy', 'uglify', 'pug', 'sass']);
 };

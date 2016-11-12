@@ -2,6 +2,12 @@ from flask import render_template, request
 from app import app, db
 from datetime import datetime
 from .models import Report
+import json
+
+@app.route('/reports', methods=['GET'])
+def reports():
+    return json.dumps(map(lambda x: x.to_dict(), Report.query.all()))
+
 
 @app.route('/', methods=['POST', 'GET'])
 def index():

@@ -31,3 +31,10 @@ class Report(db.Model):
         self.gender_identity = gender_identity
         self.url = url
         self.description = description
+
+    def to_dict(self):
+        d = {}
+        for column in db.Model.metadata.tables['report'].columns:
+            d[column.name] = self.__dict__[column.name]
+        d['date'] = d['date'].strftime('%Y-%m-%d')
+        return d

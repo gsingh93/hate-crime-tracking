@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         files: [{
             expand: true,
             cwd: 'node_modules/bootstrap/dist/css',
-            src: ['boostrap.min.css'],
+            src: ['bootstrap.min.*'],
             dest: 'dist/app/static'
           }
         ]

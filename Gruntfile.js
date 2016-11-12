@@ -58,9 +58,14 @@ module.exports = function(grunt) {
           ext: '.css'
         }]
       }
+    },
+    watch: {
+      files: ['src/**'],
+      tasks: ['default']
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-pug');
   grunt.loadNpmTasks('grunt-contrib-uglify');
